@@ -1,0 +1,5 @@
+ktspring:
+  author: jerieljan
+
+server:
+  port: 8080
