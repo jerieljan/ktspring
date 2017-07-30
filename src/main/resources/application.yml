@@ -1,5 +1,35 @@
+# The application.yml file contains all of the server settings in YML format.
+# All of the settings in this first section are applied (default profile).
+
 ktspring:
   author: jerieljan
 
 server:
   port: 8080
+
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: ktspring
+      authentication-database: admin
+
+logging.level.com.jerieljan.ktspring: DEBUG
+
+---
+
+# For more flexibility, you can take advantage of environment variables to set up the server.
+# Simply use -Dspring.profiles.active=env
+
+spring:
+  profiles: env
+  data:
+    mongodb:
+      host: ${MONGODB_HOST}
+      port: ${MONGODB_PORT}
+      database: ${MONGODB_DB}
+      authentication-database: admin
+
+server:
+  port: ${SERVER_PORT}
