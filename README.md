@@ -1,6 +1,6 @@
 # KTSpring
 
-A Spring + Kotlin Reference Project
+A Spring + Kotlin Reference Project that I personally use.
 
 If you want to start on a Spring Boot project while using Kotlin, 
 this project helps you get to do that even easier.
@@ -30,3 +30,7 @@ at ease.
     
 ...if not, well, you can just follow the MongoDB installation process on your machine.
 
+### Personalization
+
+You can make the project your own by simply refactoring the project's name (ktspring) on its package name and
+its usages in the app (`application.yml`). It shouldn't be too hard.
