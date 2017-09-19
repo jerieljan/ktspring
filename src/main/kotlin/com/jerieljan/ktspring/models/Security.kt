@@ -45,7 +45,7 @@ class MongoAuthentication : UserDetailsService {
     override fun loadUserByUsername(s: String): UserDetails? {
         val user = userRepository.findOne(s)
         if (user != null) {
-            logger.info("Logging in as: " + user.userName)
+            logger.info("Logging in as: ${user.userName}")
             return org.springframework.security.core.userdetails.User(user.userName, user.password, user.getAuthorities())
         }
         return null
@@ -69,7 +69,7 @@ class MongoAuthentication : UserDetailsService {
         if (isAvailable() && userRepository.findOne(DEFAULT_ADMIN_USERNAME) == null) {
             logger.info("Administrator not found -- creating default administrator.")
             val admin = User(DEFAULT_ADMIN_USERNAME, DEFAULT_ADMIN_PASSWORD, DEFAULT_ADMIN_ROLES)
-            logger.info("Administrator " + admin.userName + " created.")
+            logger.info("Administrator ${admin.userName} created.")
             userRepository.insert(admin)
         }
     }
